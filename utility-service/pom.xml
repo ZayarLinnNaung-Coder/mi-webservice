@@ -16,15 +16,18 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>6.1</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/libs/primefaces-6.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.apache.commons.io</groupId>
@@ -46,6 +49,11 @@
             <version>3.3.3</version>
             <scope>system</scope>
             <systemPath>${basedir}/src/main/resources/libs/javase-3.3.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
         </dependency>
     </dependencies>
 

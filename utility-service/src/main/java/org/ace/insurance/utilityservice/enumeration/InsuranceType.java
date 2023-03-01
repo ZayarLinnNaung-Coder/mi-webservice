@@ -1,6 +1,5 @@
 package org.ace.insurance.utilityservice.enumeration;
 
-
 public enum InsuranceType {
 
     LIFE("LIFE"),
@@ -53,4 +52,3 @@ public enum InsuranceType {
         return label;
     }
 }
-

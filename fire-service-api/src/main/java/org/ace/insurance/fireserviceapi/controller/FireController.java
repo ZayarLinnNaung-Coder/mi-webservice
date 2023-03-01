@@ -8,6 +8,8 @@ import org.ace.insurance.fireservice.dto.PAE001;
 import org.ace.insurance.fireservice.dto.RouteDTO;
 import org.ace.insurance.fireservice.factory.FireCalculatorFactory;
 import org.ace.insurance.fireservice.model.*;
+import org.ace.insurance.fireservice.service.*;
+import org.ace.insurance.productservice.response.ResponseManager;
 import org.ace.insurance.utilityservice.constant.Constants;
 import org.ace.insurance.utilityservice.constant.StatusType;
 import org.ace.insurance.utilityservice.constant.URIConstants;
@@ -24,6 +26,25 @@ import java.util.List;
 @AllArgsConstructor
 @Slf4j
 public class FireController {
+
+
+    private final IFloorService floorService;
+
+    private final IRoofService roofService;
+
+    private final IWallService wallService;
+
+    private final IBuildingClassService bClassService;
+
+    private final IPaeRateService paeRateService;
+
+    private final IRouteService routeService;
+
+    private final IOccupationService occupationService;
+
+    private final IBuildingOccupationService buildingOccupationService;
+
+    private final ResponseManager responseManager;
 
     @PostMapping(value = URIConstants.FLOOR_LIST)
     private String getFloorList() {

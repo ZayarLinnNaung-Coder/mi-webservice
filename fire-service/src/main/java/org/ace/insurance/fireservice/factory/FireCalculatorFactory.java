@@ -5,6 +5,8 @@ import org.ace.insurance.fireservice.dto.ContentDTO;
 import org.ace.insurance.fireservice.dto.RouteDTO;
 import org.ace.insurance.fireservice.model.*;
 import org.ace.insurance.fireservice.model.ClassValue;
+import org.ace.insurance.productservice.model.Currency;
+import org.ace.insurance.productservice.model.PaymentType;
 
 import java.util.ArrayList;
 import java.util.List;

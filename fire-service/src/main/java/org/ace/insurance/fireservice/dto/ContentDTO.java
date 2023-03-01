@@ -3,6 +3,8 @@ package org.ace.insurance.fireservice.dto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.ace.insurance.fireservice.model.CargoType;
+import org.ace.insurance.productservice.model.Currency;
+import org.ace.insurance.productservice.model.PaymentType;
 
 @Data
 @NoArgsConstructor
