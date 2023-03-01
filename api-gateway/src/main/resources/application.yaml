@@ -6,10 +6,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: outboundService
-          uri: lb://OUTBOUND-SERVICE
+        - id: fireServiceApi
+          uri: lb://FIRE-SERVICE-API
           predicates:
-            - Path=/outbound/**
+            - Path=/fire/**
         - id: tpldriverService
           uri:  lb://TPL-DRIVER-SERVICE
           predicates:
