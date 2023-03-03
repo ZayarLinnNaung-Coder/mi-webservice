@@ -11,7 +11,7 @@
     <artifactId>fire-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>fire-service</name>
-    <description>Demo project for Spring Boot</description>
+    <description>fire-service</description>
 
     <dependencies>
         <dependency>

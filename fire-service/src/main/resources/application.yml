@@ -2,7 +2,7 @@ server:
   port: 9091
 spring:
   application:
-    name: product-service
+    name: fire-service
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;databaseName=MIWS;encrypt=true;trustServerCertificate=true;

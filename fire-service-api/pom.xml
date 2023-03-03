@@ -14,10 +14,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>fire-service-api</name>
 
-    <properties>
-        <java.version>17</java.version>
-    </properties>
-
     <dependencies>
 
         <dependency>
@@ -47,7 +43,10 @@
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
