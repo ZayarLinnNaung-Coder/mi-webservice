@@ -3,8 +3,8 @@ package org.ace.insurance.fireservice.factory;
 import org.ace.insurance.fireservice.dto.ClassValueDTO;
 import org.ace.insurance.fireservice.dto.ContentDTO;
 import org.ace.insurance.fireservice.dto.RouteDTO;
-import org.ace.insurance.fireservice.model.*;
 import org.ace.insurance.fireservice.model.ClassValue;
+import org.ace.insurance.fireservice.model.*;
 import org.ace.insurance.productservice.model.Currency;
 import org.ace.insurance.productservice.model.PaymentType;
 
@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FireCalculatorFactory {
-    /** Floor **/
+    /**
+     * Floor
+     **/
     public static ContentDTO convertFloorDTO(Floor floor) {
         ContentDTO dto = new ContentDTO();
         dto.setId(floor.getId());
@@ -28,7 +30,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Wall **/
+    /**
+     * Wall
+     **/
     public static ContentDTO convertWallDTO(Wall wall) {
         ContentDTO dto = new ContentDTO();
         dto.setId(wall.getId());
@@ -44,7 +48,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Roof **/
+    /**
+     * Roof
+     **/
     public static ContentDTO convertRoofDTO(Roof roof) {
         ContentDTO dto = new ContentDTO();
         dto.setId(roof.getId());
@@ -60,7 +66,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** BuildingClass **/
+    /**
+     * BuildingClass
+     **/
     public static ContentDTO convertBuildingClassDTO(BuildingClass bclass) {
         ContentDTO dto = new ContentDTO();
         dto.setId(bclass.getId());
@@ -76,7 +84,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** BuildingOccupation **/
+    /**
+     * BuildingOccupation
+     **/
     public static ContentDTO convertBuildingOccupationDTO(BuildingOccupation bocc) {
         ContentDTO dto = new ContentDTO();
         dto.setId(bocc.getId());
@@ -97,7 +107,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Class Value **/
+    /**
+     * Class Value
+     **/
     public static ClassValueDTO convertClassValueDTO(ClassValue ClassValueDTO) {
         return new ClassValueDTO(ClassValueDTO);
     }
@@ -110,7 +122,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** CargoType **/
+    /**
+     * CargoType
+     **/
     public static ContentDTO convertCargoTypeDTO(CargoType cargoType) {
         ContentDTO dto = new ContentDTO();
         dto.setId(cargoType.getId());
@@ -126,7 +140,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Route **/
+    /**
+     * Route
+     **/
     public static ContentDTO convertRouteeDTO(Route route) {
         ContentDTO dto = new ContentDTO();
         dto.setId(route.getId());
@@ -142,7 +158,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Currency **/
+    /**
+     * Currency
+     **/
     public static ContentDTO convertCurrencyDTO(Currency cur) {
         ContentDTO dto = new ContentDTO();
         dto.setId(cur.getId());
@@ -158,7 +176,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** PaymentType **/
+    /**
+     * PaymentType
+     **/
     public static ContentDTO convertPaymentTypeDTO(PaymentType payType) {
         ContentDTO dto = new ContentDTO();
         dto.setId(payType.getId());
@@ -169,7 +189,7 @@ public class FireCalculatorFactory {
     public static List<ContentDTO> convertPaymentTypeList(List<PaymentType> payTypeList) {
         List<ContentDTO> result = new ArrayList<>();
         for (PaymentType f : payTypeList) {
-            if(f.getName().contains("-")) {
+            if (f.getName().contains("-")) {
                 f.setName(f.getName().replace("-", "_"));
             }
             result.add(convertPaymentTypeDTO(f));
@@ -185,7 +205,9 @@ public class FireCalculatorFactory {
         return result;
     }
 
-    /** Route **/
+    /**
+     * Route
+     **/
     public static RouteDTO convertRouteWithInsuranceTypeDTO(Route route) {
         RouteDTO dto = new RouteDTO();
         dto.setId(route.getId());

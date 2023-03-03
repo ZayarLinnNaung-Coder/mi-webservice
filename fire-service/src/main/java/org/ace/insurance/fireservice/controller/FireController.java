@@ -1,6 +1,5 @@
-package org.ace.insurance.fireserviceapi.controller;
+package org.ace.insurance.fireservice.controller;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.ace.insurance.fireservice.dto.BuildingClassCriteriaDTO;
@@ -17,8 +16,6 @@ import org.ace.insurance.utilityservice.constant.URIConstants;
 import org.ace.insurance.utilityservice.enumeration.ResponseStatus;
 import org.ace.insurance.utilityservice.exception.SystemException;
 import org.hibernate.service.spi.ServiceException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

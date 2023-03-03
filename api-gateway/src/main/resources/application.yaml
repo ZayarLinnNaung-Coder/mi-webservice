@@ -9,7 +9,7 @@ spring:
     gateway:
       routes:
         - id: fireServiceApi
-          uri: lb://FIRE-SERVICE-API
+          uri: lb://FIRE-SERVICE
           predicates:
             - Path=/fire/**
 

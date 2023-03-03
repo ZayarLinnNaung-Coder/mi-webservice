@@ -5,9 +5,9 @@ spring:
     name: fire-service
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://localhost:1433;databaseName=MIWS;encrypt=true;trustServerCertificate=true;
+    url: jdbc:sqlserver://DESKTOP-UJKM85D\MSSQLSERVER02;databaseName=MIWS_2023_01_02;encrypt=true;trustServerCertificate=true;port=1433
     username: sa
-    password: 12345
+    password: 123@ace
   jpa:
     show-sql: true
     properties:

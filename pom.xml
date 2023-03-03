@@ -24,7 +24,6 @@
         <module>utility-service</module>
         <module>product-service</module>
         <module>fire-service</module>
-        <module>fire-service-api</module>
     </modules>
 
     <properties>
