@@ -19,8 +19,9 @@
     <description>MI WebService</description>
 
     <modules>
-        <module>api-gateway</module>
         <module>eureka-server</module>
+        <module>api-gateway</module>
+        <module>admin-server</module>
         <module>utility-service</module>
         <module>product-service</module>
         <module>fire-service</module>
@@ -30,6 +31,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <spring-cloud.version>2022.0.1</spring-cloud.version>
+        <spring-boot-admin.version>3.0.0-M4</spring-boot-admin.version>
     </properties>
 
     <dependencies>
@@ -111,8 +113,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
 
     <build>
         <plugins>
@@ -144,6 +154,7 @@
             <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
             <snapshots>
                 <enabled>false</enabled>
+                <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
     </repositories>

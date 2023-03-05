@@ -1,13 +1,13 @@
 server:
-  port: 9091
+  port: 9093
 spring:
   application:
     name: fire-service
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://DESKTOP-UJKM85D\MSSQLSERVER02;databaseName=MIWS_2023_01_02;encrypt=true;trustServerCertificate=true;port=1433
+    url: jdbc:sqlserver://localhost:1433;databaseName=MIWS;encrypt=true;trustServerCertificate=true;
     username: sa
-    password: 123@ace
+    password: 12345
   jpa:
     show-sql: true
     properties:
@@ -19,15 +19,22 @@ spring:
       ddl-auto: none
   main:
     allow-bean-definition-overriding: true
+  boot:
+    admin:
+      client:
+        url: http://localhost:8088
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
 management:
-  endpoint:
-    health:
-      show-details: always
   endpoints:
     web:
       exposure:
-        include: info, health
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  file:
+    name: D:/logs/fire-service.log

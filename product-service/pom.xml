@@ -26,7 +26,11 @@
             <groupId>org.ace.insurance</groupId>
             <artifactId>utility-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
     </dependencies>
 
@@ -35,8 +39,16 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
+
     </build>
 
 </project>
