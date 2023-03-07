@@ -8,10 +8,13 @@
         <version>1.0</version>
     </parent>
 
+    <groupId>org.ace.insurance</groupId>
     <artifactId>utility-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>utility-service</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -26,42 +29,39 @@
             <artifactId>primefaces</artifactId>
             <version>6.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/libs/primefaces-6.1.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/primefaces-6.1.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.apache.commons.io</groupId>
             <artifactId>commonsIO</artifactId>
             <version>2.5.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/libs/commons-io-2.5.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/commons-io-2.5.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.ace.core</groupId>
             <artifactId>core-3.3.3</artifactId>
             <version>3.3.3</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/libs/core-3.3.3.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/core-3.3.3.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.ace.javase</groupId>
             <artifactId>javase-3.3.3</artifactId>
             <version>3.3.3</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/resources/libs/javase-3.3.3.jar</systemPath>
+            <systemPath>${pom.basedir}/src/main/resources/libs/javase-3.3.3.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20160810</version>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -72,5 +72,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

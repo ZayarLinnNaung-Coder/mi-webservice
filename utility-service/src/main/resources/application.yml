@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     url: jdbc:sqlserver://localhost:1433;databaseName=MIWS;encrypt=true;trustServerCertificate=true;
     username: sa
-    password: 12345
+    password: 123@ace
   jpa:
     show-sql: true
     properties:

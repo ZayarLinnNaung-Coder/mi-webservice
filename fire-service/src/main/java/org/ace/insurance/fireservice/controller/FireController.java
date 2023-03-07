@@ -2,6 +2,7 @@ package org.ace.insurance.fireservice.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.ace.insurance.fireservice.component.ResponseManager;
 import org.ace.insurance.fireservice.dto.BuildingClassCriteriaDTO;
 import org.ace.insurance.fireservice.dto.ContentDTO;
 import org.ace.insurance.fireservice.dto.PAE001;
@@ -9,7 +10,6 @@ import org.ace.insurance.fireservice.dto.RouteDTO;
 import org.ace.insurance.fireservice.factory.FireCalculatorFactory;
 import org.ace.insurance.fireservice.model.*;
 import org.ace.insurance.fireservice.service.*;
-import org.ace.insurance.productservice.response.ResponseManager;
 import org.ace.insurance.utilityservice.constant.Constants;
 import org.ace.insurance.utilityservice.constant.StatusType;
 import org.ace.insurance.utilityservice.constant.URIConstants;

@@ -1,0 +1,1 @@
+start cmd /k java -jar utility-service/target/utility-service-0.0.1-SNAPSHOT.jar
