@@ -19,10 +19,6 @@ spring:
       ddl-auto: none
   main:
     allow-bean-definition-overriding: true
-  boot:
-    admin:
-      client:
-        url: http://localhost:8088
 eureka:
   client:
     service-url:
@@ -35,6 +31,5 @@ management:
   endpoint:
     health:
       show-details: always
-logging:
-  file:
-    name: D:/logs/utility-service.log
+
+

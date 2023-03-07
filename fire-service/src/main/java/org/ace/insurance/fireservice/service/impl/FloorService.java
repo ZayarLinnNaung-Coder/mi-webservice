@@ -7,8 +7,6 @@ import org.ace.insurance.fireservice.repository.FloorRepo;
 import org.ace.insurance.fireservice.service.IFloorService;
 import org.ace.insurance.utilityservice.exception.DAOException;
 import org.ace.insurance.utilityservice.exception.SystemException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,11 +19,13 @@ public class FloorService implements IFloorService {
 
 	private final FloorRepo floorRepo;
 
+
 	public List<Floor> findAllFloor() {
 		List<Floor> result = null;
 			try {
 				//result = floorRepo.findAll();
-				log.info("findAllFloor() invoked.");
+			//	log.info("findAllFloor() invoked.");
+				log.error("findAllFloor() invoked - error dummy.");
 				result = getFixedFloorList();
 			} catch (DAOException e) {
 				throw new SystemException(e.getErrorCode(), "Failed to find all of Floor)", e);

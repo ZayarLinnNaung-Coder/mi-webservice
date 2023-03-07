@@ -1,6 +1,7 @@
 package org.ace.insurance.fireservice.service.impl;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.ace.insurance.fireservice.model.Roof;
 import org.ace.insurance.fireservice.repository.RoofRepo;
 import org.ace.insurance.fireservice.service.IRoofService;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class RoofService implements IRoofService {
 
 	private final RoofRepo roofRepo;
@@ -20,6 +22,7 @@ public class RoofService implements IRoofService {
 	public List<Roof> findAllRoof() {
 		List<Roof> result = null;
 		try {
+			log.info("findAllRoof() invoked.");
 			List<Roof> roofResult = roofRepo.findAll();
 			result = getFixedRoofList(roofResult);
 		} catch (DAOException e) {
