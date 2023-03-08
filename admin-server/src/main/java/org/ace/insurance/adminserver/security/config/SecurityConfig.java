@@ -8,6 +8,12 @@ import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
@@ -32,19 +38,18 @@ public class SecurityConfig {
         successHandler.setTargetUrlParameter("redirectTo");
         successHandler.setDefaultTargetUrl(this.adminServer.path("/"));
 
-        return http.authorizeHttpRequests(
-                authReq -> authReq
-                            .requestMatchers(adminServer.path("/assets/**")).permitAll()
-                            .requestMatchers(adminServer.path("/actuator/info")).permitAll()
-                            .requestMatchers(adminServer.path("/actuator/health")).permitAll()
-                            .requestMatchers(adminServer.path("/login")).permitAll()
-                            .anyRequest().authenticated()
-        ).formLogin(
-                (formLogin) ->
-                        formLogin.loginPage(adminServer.path("/login")).successHandler(successHandler)
-                                .and()
-        ).logout((logout) -> logout.logoutUrl(adminServer.path("/logout"))).httpBasic(Customizer.withDefaults())
-                .csrf((csrf) -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        http.authorizeHttpRequests(auth ->
+                auth.requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/assets/**"))).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/**/*.css"))).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/actuator/info"))).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/actuator/health"))).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher(this.adminServer.path("/login"))).permitAll()
+                        .anyRequest().authenticated())
+                .formLogin(formLogin ->
+                        formLogin.loginPage(this.adminServer.path("/login")).successHandler(successHandler).and())
+                .logout(logout -> logout.logoutUrl(this.adminServer.path("/logout")))
+                .httpBasic(Customizer.withDefaults())
+                .csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .ignoringRequestMatchers(
                                 new AntPathRequestMatcher(this.adminServer.path("/instances"),
                                         HttpMethod.POST.toString()),
@@ -52,7 +57,8 @@ public class SecurityConfig {
                                         HttpMethod.DELETE.toString()),
                                 new AntPathRequestMatcher(this.adminServer.path("/actuator/**"))
                         ))
-                .csrf().disable()
-                .rememberMe((rememberMe) -> rememberMe.key(UUID.randomUUID().toString()).tokenValiditySeconds(1209600)).build();
+                .csrf().disable();
+        return http.build();
     }
+
 }

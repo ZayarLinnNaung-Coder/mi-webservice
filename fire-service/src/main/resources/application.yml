@@ -1,3 +1,7 @@
+info:
+  name: 'Fire Service'
+  version: '1.0'
+  description: 'Fire Service Operation'
 server:
   port: 9093
 spring:
@@ -23,22 +27,27 @@ spring:
     admin:
       client:
         url: http://localhost:8088
-        username: admin
-        password: 12345
+        username: 'admin'
+        password: '12345'
         instance:
           service-host-type: ip
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: '*'
   endpoint:
     health:
       show-details: always
+  info:
+    env:
+      enabled: true
 logging:
   file:
     name: D:/logs/fire-service.log
