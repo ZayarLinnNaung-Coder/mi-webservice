@@ -23,8 +23,10 @@ spring:
     admin:
       client:
         url: http://localhost:8088
-        username: Zayar
+        username: admin
         password: 12345
+        instance:
+          service-host-type: ip
 eureka:
   client:
     service-url:
