@@ -1,4 +1,4 @@
-package org.ace.insurance.fireservice.component;
+package org.ace.insurance.productservice.response;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
