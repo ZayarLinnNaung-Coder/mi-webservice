@@ -1,8 +1,21 @@
 server:
   port: 8088
-
 spring:
+  boot:
+    admin:
+      ui:
+        title: 'MI-WEBSERVICE'
+        login-icon: 'assets/img/MI-logo.png'
+        brand: "<img src= 'assets/img/MI-logo.png'> <span> MI WEBSERVICES </span> "
+        available-languages:
+          - en
+        view-settings:
+          - name: 'about'
+            enabled: false
+        favicon: 'assets/img/MI-logo.png'
+      server:
+        url: http://localhost:8088
   security:
     user:
-      name: "Zayar"
-      password: "12345"
+      name: 'admin'
+      password: '12345'
